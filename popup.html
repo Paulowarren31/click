@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Cookie Clicker</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+
+
+        <style>
+
+            .container{
+                width: 300px;
+                height: 350px;
+                padding-top: 5%;
+                background: grey;
+            }
+
+            #name_main{
+                color: white;
+            }
+            #name_text{
+                margin-top: 40px;
+            }
+            #name_input{
+                margin-top: 80px;
+            }
+            #button_begin{
+                margin-top: 40px;
+                float: right;
+            }
+
+            #card_burst{
+                height: 10rem;
+            }
+            .card{
+                border-color: black;
+            }
+        </style>
+
+    </head>
+    <div class="container">
+        <div id="intro" class="hidden-xs-up">
+            <div class="form-group">
+                <h3 id="name_text"class="text-xs-center p-t-1">Hello, Whats your name?</h3>
+                <input id="name_input" type="text" class="form-control" placeholder="John Click">
+                <div id="button_begin"class="btn btn-md btn-primary ">Submit</div>
+            </div>
+        </div>
+
+        <div id="main" class="hidden-xs-up">
+            <h3 class="text-xs-center" id="name_main" ></h3>
+            <hr style="border-color: white;">
+            <div class="row">
+                <div class="col-xs-6 pr-0">
+                    <div class="card pa-1 mb-0">
+                        <h5 id="counter"></h5>
+                    </div>
+                    <div class="card card-block mt-0">
+                        test
+                    </div>
+
+                </div>
+
+                <div class="col-xs-6 pl-0">
+                    <div id="card_burst" class="card card-block">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-block">
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <body>
+
+    </body>
+    <!-- mo.js -->
+    <script src="mo.js"></script>
+
+    <script src="jquery.js"></script>
+    <script src="popup.js"></script>
+
+</html>
