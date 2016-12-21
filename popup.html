@@ -8,16 +8,17 @@
 
         <style>
 
-            .container{
+            body{
+
                 width: 300px;
-                height: 350px;
+                height: 700px;
                 padding-top: 5%;
-                background: grey;
+                background-image: url("weather.png");
+            }
+            .white{
+                color: #0072bd;
             }
 
-            #name_main{
-                color: white;
-            }
             #name_text{
                 margin-top: 40px;
             }
@@ -32,8 +33,12 @@
             #card_burst{
                 height: 10rem;
             }
-            .card{
-                border-color: black;
+            #card_detail{
+                height: 88px;
+                font-size: 85%;
+            }
+            hr{
+                border-color: #0072bd;
             }
         </style>
 
@@ -48,15 +53,15 @@
         </div>
 
         <div id="main" class="hidden-xs-up">
-            <h3 class="text-xs-center" id="name_main" ></h3>
-            <hr style="border-color: white;">
+            <h3 class="white text-xs-center" id="name_main" ></h3>
+            <hr >
             <div class="row">
                 <div class="col-xs-6 pr-0">
-                    <div class="card pa-1 mb-0">
+                    <div class="card card-block pa-1 mb-0">
                         <h5 id="counter"></h5>
                     </div>
-                    <div class="card card-block mt-0">
-                        test
+                    <div id="card_detail"class="card card-block">
+                        50 clicks in the last hour
                     </div>
 
                 </div>
@@ -66,8 +71,41 @@
                     </div>
                 </div>
             </div>
+            <h3 class="white text-xs-center">Shop</h3>
+            <hr>
             <div class="card">
-                <div class="card-block">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#home" role="tab">Production</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#profile" role="tab">Colors</a>
+                    </li>
+                </ul>
+
+                <div class="card-block pt-0">
+
+
+                    <!-- Tab panes -->
+                    <div class="tab-content pt-1">
+                        <div class="tab-pane active" id="home" role="tabpanel">
+                            <ul class="list-group">
+                                <li class="list-group-item row pr-0 pt-0 pb-0">
+                                    <div class="col-xs-8">
+                                        Moderate Browser
+                                    </div>
+                                    <div class="col-xs-4 bg-success">
+                                        buy
+                                    </div>
+                                </li>
+                                <li class="list-group-item"></li>
+                                <li class="list-group-item">Morbi leo risus</li>
+                            </ul>
+
+                        </div>
+                        <div class="tab-pane" id="profile" role="tabpanel">colors</div>
+                    </div>
                 </div>
             </div>
 
@@ -80,6 +118,7 @@
     <script src="mo.js"></script>
 
     <script src="jquery.js"></script>
+    <script src="bootstrap.js"></script>
     <script src="popup.js"></script>
 
 </html>

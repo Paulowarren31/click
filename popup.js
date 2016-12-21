@@ -1,8 +1,5 @@
 $(function(){
-
-
   init();
-
 
   $('#button_begin').click(function(e){
     saveName();
@@ -39,15 +36,16 @@ function initBurst(){
 
     //setup burst
     var shape = new mojs.Burst({
-      count:        30, 
-      top:          '45%',
+      count:        count, 
+      top:          155,
       x:            67,
       radiusX:      {0:40},
       radiusY:      {0:50},
 
       children:     {
-        shape: 'curve',
+        shape: res.shape,
         stroke: res.color,
+        fill: 'teal',
         radius: { 0: 65 },
         duration: 1500,
       },
@@ -70,8 +68,8 @@ function saveName(){
   //default values
   chrome.storage.local.set({
     'name': name,
-    'clicks': 0,
-    'color': 'black',
+    'clicks': 100,
+    'color': 'teal',
     'count': 1,
     'shape': 'line',
   })
