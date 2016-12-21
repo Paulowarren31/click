@@ -1,0 +1,93 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title Cookie Clicker
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css', integrity='sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi', crossorigin='anonymous')
+
+    style.
+      body{
+      width: 300px;
+      height: 700px;
+      padding-top: 5%;
+      background-image: url("weather.png");
+      }
+      .white{
+      color: #0072bd;
+      }
+      .shop-item{
+        display: flex;
+      }
+      #name_text{
+      margin-top: 40px;
+      }
+      #name_input{
+      margin-top: 80px;
+      }
+      #button_begin{
+      margin-top: 40px;
+      float: right;
+      }
+      #card_burst{
+      height: 10rem;
+      }
+      #card_detail{
+      height: 88px;
+      font-size: 85%;
+      }
+      hr{
+      border-color: #0072bd;
+      }
+
+  body
+    .container
+      #intro.hidden-xs-up
+        .form-group
+          h3#name_text.text-xs-center.p-t-1 Hello, Whats your name?
+          input#name_input.form-control(type='text', placeholder='John Click')
+          #button_begin.btn.btn-md.btn-primary Submit
+      #main.hidden-xs-up
+        h3#name_main.white.text-xs-center
+        hr
+        .row
+          .col-xs-6.pr-0
+            .card.card-block.pa-1.mb-0
+              h5#counter
+            #card_detail.card.card-block
+              | 50 clicks in the last hour
+          .col-xs-6.pl-0
+            #card_burst.card.card-block
+        h3.white.text-xs-center Shop
+        hr
+        .card
+          // Nav tabs
+          ul.nav.nav-tabs(role='tablist')
+            li.nav-item
+              a.nav-link.active(data-toggle='tab', href='#home', role='tab') Production
+            li.nav-item
+              a.nav-link(data-toggle='tab', href='#profile', role='tab') Colors
+
+          .card-block.pt-0.pb-0
+            // Tab panes
+            .tab-content.pt-1
+              #home.tab-pane.active(role='tabpanel')
+                ul.list-group
+
+                  li.list-group-item.row.pr-0.pt-0.pb-0.shop-item
+                    .col-xs-8
+                      | Moderate Browser
+                    .col-xs-4.bg-success
+                      | buy
+                  li.list-group-item.row.pr-0.pt-0.pb-0.shop-item
+                    .col-xs-8
+                      |Morbi leo risus
+                    .col-xs-4.bg-success
+                      | buy
+
+              #profile.tab-pane(role='tabpanel') colors
+    // mo.js
+  script(src='mo.js')
+  script(src='jquery.js')
+  script(src='bootstrap.js')
+  script(src='popup.js')
+

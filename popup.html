@@ -1,124 +1,33 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Cookie Clicker</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
-
-
-        <style>
-
-            body{
-
-                width: 300px;
-                height: 700px;
-                padding-top: 5%;
-                background-image: url("weather.png");
-            }
-            .white{
-                color: #0072bd;
-            }
-
-            #name_text{
-                margin-top: 40px;
-            }
-            #name_input{
-                margin-top: 80px;
-            }
-            #button_begin{
-                margin-top: 40px;
-                float: right;
-            }
-
-            #card_burst{
-                height: 10rem;
-            }
-            #card_detail{
-                height: 88px;
-                font-size: 85%;
-            }
-            hr{
-                border-color: #0072bd;
-            }
-        </style>
-
-    </head>
-    <div class="container">
-        <div id="intro" class="hidden-xs-up">
-            <div class="form-group">
-                <h3 id="name_text"class="text-xs-center p-t-1">Hello, Whats your name?</h3>
-                <input id="name_input" type="text" class="form-control" placeholder="John Click">
-                <div id="button_begin"class="btn btn-md btn-primary ">Submit</div>
-            </div>
-        </div>
-
-        <div id="main" class="hidden-xs-up">
-            <h3 class="white text-xs-center" id="name_main" ></h3>
-            <hr >
-            <div class="row">
-                <div class="col-xs-6 pr-0">
-                    <div class="card card-block pa-1 mb-0">
-                        <h5 id="counter"></h5>
-                    </div>
-                    <div id="card_detail"class="card card-block">
-                        50 clicks in the last hour
-                    </div>
-
-                </div>
-
-                <div class="col-xs-6 pl-0">
-                    <div id="card_burst" class="card card-block">
-                    </div>
-                </div>
-            </div>
-            <h3 class="white text-xs-center">Shop</h3>
-            <hr>
-            <div class="card">
-                <!-- Nav tabs -->
-                <ul class="nav nav-tabs" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" data-toggle="tab" href="#home" role="tab">Production</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#profile" role="tab">Colors</a>
-                    </li>
-                </ul>
-
-                <div class="card-block pt-0">
-
-
-                    <!-- Tab panes -->
-                    <div class="tab-content pt-1">
-                        <div class="tab-pane active" id="home" role="tabpanel">
-                            <ul class="list-group">
-                                <li class="list-group-item row pr-0 pt-0 pb-0">
-                                    <div class="col-xs-8">
-                                        Moderate Browser
-                                    </div>
-                                    <div class="col-xs-4 bg-success">
-                                        buy
-                                    </div>
-                                </li>
-                                <li class="list-group-item"></li>
-                                <li class="list-group-item">Morbi leo risus</li>
-                            </ul>
-
-                        </div>
-                        <div class="tab-pane" id="profile" role="tabpanel">colors</div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <body>
-
-    </body>
-    <!-- mo.js -->
-    <script src="mo.js"></script>
-
-    <script src="jquery.js"></script>
-    <script src="bootstrap.js"></script>
-    <script src="popup.js"></script>
-
-</html>
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Cookie Clicker</title><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous"><style>body{
+width: 300px;
+height: 700px;
+padding-top: 5%;
+background-image: url("weather.png");
+}
+.white{
+color: #0072bd;
+}
+.shop-item{
+  display: flex;
+}
+#name_text{
+margin-top: 40px;
+}
+#name_input{
+margin-top: 80px;
+}
+#button_begin{
+margin-top: 40px;
+float: right;
+}
+#card_burst{
+height: 10rem;
+}
+#card_detail{
+height: 88px;
+font-size: 85%;
+}
+hr{
+border-color: #0072bd;
+}
+</style></head><body><div class="container"><div id="intro" class="hidden-xs-up"><div class="form-group"><h3 id="name_text" class="text-xs-center p-t-1">Hello, Whats your name?</h3><input id="name_input" type="text" placeholder="John Click" class="form-control"><div id="button_begin" class="btn btn-md btn-primary">Submit</div></div></div><div id="main" class="hidden-xs-up"><h3 id="name_main" class="white text-xs-center"></h3><hr><div class="row"><div class="col-xs-6 pr-0"><div class="card card-block pa-1 mb-0"><h5 id="counter"></h5></div><div id="card_detail" class="card card-block">50 clicks in the last hour</div></div><div class="col-xs-6 pl-0"><div id="card_burst" class="card card-block"></div></div></div><h3 class="white text-xs-center">Shop</h3><hr><div class="card"><!-- Nav tabs--><ul role="tablist" class="nav nav-tabs"><li class="nav-item"><a data-toggle="tab" href="#home" role="tab" class="nav-link active">Production</a></li><li class="nav-item"><a data-toggle="tab" href="#profile" role="tab" class="nav-link">Colors</a></li></ul><div class="card-block pt-0"><!-- Tab panes--><div class="tab-content pt-1"><div id="home" role="tabpanel" class="tab-pane active"><ul class="list-group"><li class="list-group-item row pr-0 pt-0 pb-0 shop-item"><div class="col-xs-8">Moderate Browser</div><div class="col-xs-4 bg-success">buy</div></li><li class="list-group-item row pr-0 pt-0 pb-0 shop-item"><div class="col-xs-8">Morbi leo risus</div><div class="col-xs-4 bg-success">buy</div></li></ul></div><div id="profile" role="tabpanel" class="tab-pane">colors</div></div></div></div></div></div><!-- mo.js--></body><script src="mo.js"></script><script src="jquery.js"></script><script src="bootstrap.js"></script><script src="popup.js"></script></html>
