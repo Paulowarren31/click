@@ -4,11 +4,12 @@ html
     meta(charset='utf-8')
     title Cookie Clicker
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css', integrity='sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi', crossorigin='anonymous')
+    link(rel='stylesheet', href='fa/css/font-awesome.css')
 
     style.
       body{
       width: 300px;
-      height: 700px;
+      height: 600px;
       padding-top: 5%;
       background-image: url("weather.png");
       }
@@ -35,6 +36,9 @@ html
       height: 88px;
       font-size: 85%;
       }
+      #shop{
+      height: 250px;
+      }
       hr{
       border-color: #0072bd;
       }
@@ -59,32 +63,92 @@ html
             #card_burst.card.card-block
         h3.white.text-xs-center Shop
         hr
-        .card
+        #shop.card
           // Nav tabs
           ul.nav.nav-tabs(role='tablist')
             li.nav-item
-              a.nav-link.active(data-toggle='tab', href='#home', role='tab') Production
-            li.nav-item
-              a.nav-link(data-toggle='tab', href='#profile', role='tab') Colors
+              a.nav-link.active(data-toggle='tab', href='#home', role='tab')
+                i.fa.fa-bolt(aria-hidden='true')
 
-          .card-block.pt-0.pb-0
+            li.nav-item
+              a.nav-link(data-toggle='tab', href='#color', role='tab')
+                i.fa.fa-tint(aria-hidden='true')
+            li.nav-item
+              a.nav-link(data-toggle='tab', href='#shape', role='tab')
+                i.fa.fa-cubes(aria-hidden='true')
+
+          //shop block card
+          .card-block.pt-0.pb-0.pr-0.pl-0
             // Tab panes
             .tab-content.pt-1
               #home.tab-pane.active(role='tabpanel')
                 ul.list-group
+                  li.list-group-item.row.pr-0.pl-0.pt-0.pb-0.ml-0.mr-0.shop-item
+                    .col-xs-8.pt-1.pb-1
+                      | Light Browser
+                    .col-xs-4.bg-success.text-xs-center
+                        br
+                        p 50
 
-                  li.list-group-item.row.pr-0.pt-0.pb-0.shop-item
-                    .col-xs-8
-                      | Moderate Browser
-                    .col-xs-4.bg-success
-                      | buy
-                  li.list-group-item.row.pr-0.pt-0.pb-0.shop-item
-                    .col-xs-8
-                      |Morbi leo risus
-                    .col-xs-4.bg-success
-                      | buy
+                  li.list-group-item.row.pr-0.pl-0.pt-0.pb-0.ml-0.mr-0.shop-item
+                    .col-xs-8.pt-1.pb-1
+                      | Medium Browser
+                    .col-xs-4.bg-success.text-xs-center
+                        br
+                        p 500
 
-              #profile.tab-pane(role='tabpanel') colors
+                  li.list-group-item.row.pr-0.pl-0.pt-0.pb-0.ml-0.mr-0.shop-item
+                    .col-xs-8.pt-1.pb-1
+                      | Power Browser
+                    .col-xs-4.bg-success.text-xs-center
+                        br
+                        p 10000
+              #color.tab-pane(role='tabpanel')
+                ul.list-group
+                  li.list-group-item.row.pr-0.pl-0.pt-0.pb-0.ml-0.mr-0.shop-item
+                    .col-xs-8.pt-1.pb-1
+                      | Light Browser
+                    .col-xs-4.bg-success.text-xs-center
+                        br
+                        p 50
+
+                  li.list-group-item.row.pr-0.pl-0.pt-0.pb-0.ml-0.mr-0.shop-item
+                    .col-xs-8.pt-1.pb-1
+                      | Medium Browser
+                    .col-xs-4.bg-success.text-xs-center
+                        br
+                        p 500
+
+                  li.list-group-item.row.pr-0.pl-0.pt-0.pb-0.ml-0.mr-0.shop-item
+                    .col-xs-8.pt-1.pb-1
+                      | Power Browser
+                    .col-xs-4.bg-success.text-xs-center
+                        br
+                        p 10000
+
+              #shape.tab-pane(role='tabpanel') 
+                ul.list-group
+                  li.list-group-item.row.pr-0.pl-0.pt-0.pb-0.ml-0.mr-0.shop-item
+                    .col-xs-8.pt-1.pb-1
+                      | Light Browser
+                    .col-xs-4.bg-success.text-xs-center
+                        br
+                        p 50
+
+                  li.list-group-item.row.pr-0.pl-0.pt-0.pb-0.ml-0.mr-0.shop-item
+                    .col-xs-8.pt-1.pb-1
+                      | Medium Browser
+                    .col-xs-4.bg-success.text-xs-center
+                        br
+                        p 500
+
+                  li.list-group-item.row.pr-0.pl-0.pt-0.pb-0.ml-0.mr-0.shop-item
+                    .col-xs-8.pt-1.pb-1
+                      | Power Browser
+                    .col-xs-4.bg-success.text-xs-center
+                        br
+                        p 10000
+
     // mo.js
   script(src='mo.js')
   script(src='jquery.js')

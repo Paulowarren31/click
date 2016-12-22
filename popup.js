@@ -3,6 +3,7 @@ $(function(){
 
   $('#button_begin').click(function(e){
     saveName();
+    show('#main');
   })
 
 })
@@ -14,12 +15,12 @@ function init(){
     console.log(res)
     if(res.name === undefined){
       //show intro stuff
-      $('#intro').removeClass('hidden-xs-up');
+      show('#intro');
     }
     else{
       initBurst();
       //show main screen
-      $('#main').removeClass('hidden-xs-up');
+      show('#main');
       $('#name_main').text('Welcome ' + res.name + '!');
       $('#counter').text(res.clicks + ' clicks');
     }
@@ -73,4 +74,12 @@ function saveName(){
     'count': 1,
     'shape': 'line',
   })
+}
+
+function show(id){
+  $(id).removeClass('hidden-xs-up');
+}
+
+function hide(id){
+  $(id).addClass('hidden-xs-up');
 }
