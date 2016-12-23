@@ -19,6 +19,9 @@ html
       .shop-item{
         display: flex;
       }
+      .tab{
+        width: 31%;
+      }
       #name_text{
       margin-top: 40px;
       }
@@ -42,6 +45,9 @@ html
       hr{
       border-color: #0072bd;
       }
+      a{
+      cursor:pointer;
+      }
 
   body
     .container
@@ -58,7 +64,7 @@ html
             .card.card-block.pa-1.mb-0
               h5#counter
             #card_detail.card.card-block
-              | 50 clicks in the last hour
+              small#prod
           .col-xs-6.pl-0
             #card_burst.card.card-block
         h3.white.text-xs-center Shop
@@ -66,15 +72,15 @@ html
         #shop.card
           // Nav tabs
           ul.nav.nav-tabs(role='tablist')
-            li.nav-item
-              a.nav-link.active(data-toggle='tab', href='#home', role='tab')
+            li.nav-item.tab
+              a.nav-link.text-xs-center.active(data-toggle='tab', href='#home', role='tab')
                 i.fa.fa-bolt(aria-hidden='true')
 
-            li.nav-item
-              a.nav-link(data-toggle='tab', href='#color', role='tab')
+            li.nav-item.tab
+              a.nav-link.text-xs-center(data-toggle='tab', href='#color', role='tab')
                 i.fa.fa-tint(aria-hidden='true')
-            li.nav-item
-              a.nav-link(data-toggle='tab', href='#shape', role='tab')
+            li.nav-item.tab
+              a.nav-link.text-xs-center(data-toggle='tab', href='#shape', role='tab')
                 i.fa.fa-cubes(aria-hidden='true')
 
           //shop block card
@@ -82,28 +88,37 @@ html
             // Tab panes
             .tab-content.pt-1
               #home.tab-pane.active(role='tabpanel')
+                h5.text-xs-center.mb-1
+                  | Upgrades
                 ul.list-group
                   li.list-group-item.row.pr-0.pl-0.pt-0.pb-0.ml-0.mr-0.shop-item
-                    .col-xs-8.pt-1.pb-1
-                      | Light Browser
-                    .col-xs-4.bg-success.text-xs-center
-                        br
-                        p 50
+                    //.col-xs-8.pt-1.pb-1
+                    //  | Light Browser
+                    //a#buy-light.col-xs-4.bg-success.text-xs-center
+                    //    br
+                    //    p 50
+
+                    a#buy-confirm.col-xs-8.bg-success.text-xs-center.py-1
+                      | confirm
+                    a#buy-confirm.col-xs-4.bg-danger.text-xs-center.py-1
+                      | no
 
                   li.list-group-item.row.pr-0.pl-0.pt-0.pb-0.ml-0.mr-0.shop-item
                     .col-xs-8.pt-1.pb-1
                       | Medium Browser
-                    .col-xs-4.bg-success.text-xs-center
+                    a#buy-med.col-xs-4.bg-success.text-xs-center
                         br
                         p 500
 
                   li.list-group-item.row.pr-0.pl-0.pt-0.pb-0.ml-0.mr-0.shop-item
                     .col-xs-8.pt-1.pb-1
                       | Power Browser
-                    .col-xs-4.bg-success.text-xs-center
+                    a#buy-power.col-xs-4.bg-success.text-xs-center
                         br
                         p 10000
               #color.tab-pane(role='tabpanel')
+                h5.text-xs-center.mb-1
+                  | Colors
                 ul.list-group
                   li.list-group-item.row.pr-0.pl-0.pt-0.pb-0.ml-0.mr-0.shop-item
                     .col-xs-8.pt-1.pb-1
@@ -126,7 +141,10 @@ html
                         br
                         p 10000
 
+
               #shape.tab-pane(role='tabpanel') 
+                h5.text-xs-center.mb-1
+                  | Shapes
                 ul.list-group
                   li.list-group-item.row.pr-0.pl-0.pt-0.pb-0.ml-0.mr-0.shop-item
                     .col-xs-8.pt-1.pb-1

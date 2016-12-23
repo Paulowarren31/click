@@ -1,14 +1,50 @@
+
+
 $(function(){
   init();
 
+  //BEGIN BUTTON
   $('#button_begin').click(function(e){
     saveName();
     show('#main');
   })
 
+  ////SHOP
+  //
+  //upgrade
+  $('#buy-light').click(function(){
+    chrome.storage.local.get(['prod', 'clicks'], function(res){
+      console.log(res)
+      if(res.prod != undefined){
+
+        if(buy_prod(50, 10, res)){
+          //refresh
+          refresh();
+        }
+        else{
+          //not enough money
+        }
+
+      }
+    })
+  })
+  $('#buy-med').click(function(){
+
+  })
+  $('#buy-power').click(function(){
+
+  })
+
+
+
 })
 
 function init(){
+
+  chrome.runtime.onMessage.addListener(
+    function(request, sender, sendResponse) {
+      if(request.type == 'refresh') refresh();
+  });
   //if no name ask for name,
   //else send to main screen
   chrome.storage.local.get(['name', 'clicks'], function(res){
@@ -18,6 +54,7 @@ function init(){
       show('#intro');
     }
     else{
+      refresh();
       initBurst();
       //show main screen
       show('#main');
@@ -37,7 +74,7 @@ function initBurst(){
 
     //setup burst
     var shape = new mojs.Burst({
-      count:        count, 
+      count:        count,
       top:          155,
       x:            67,
       radiusX:      {0:40},
@@ -70,6 +107,7 @@ function saveName(){
   chrome.storage.local.set({
     'name': name,
     'clicks': 100,
+    'prod': 0,
     'color': 'teal',
     'count': 1,
     'shape': 'line',
@@ -83,3 +121,45 @@ function show(id){
 function hide(id){
   $(id).addClass('hidden-xs-up');
 }
+
+function refresh(){
+  chrome.storage.local.get(['clicks', 'prod'], function(res){
+    console.log(res)
+    $('#counter').text(res.clicks + ' clicks')
+    $('#prod').text('+' + res.prod + ' clicks/min')
+  })
+
+}
+
+function buy_prod(cost, prod, res){
+  if(res.clicks >= cost){
+    chrome.storage.local.set({
+      'prod': res.prod + prod, //+10 per min
+      'clicks': res.clicks - cost
+    }, function(){
+      refresh();
+    })
+  }
+  else return false
+
+}
+
+function cheat(c){
+  chrome.storage.local.set({
+    'clicks': c
+  }, function(){
+    refresh();
+  })
+}
+
+chrome.storage.onChanged.addListener(function(changes, namespace) {
+  for (key in changes) {
+    var storageChange = changes[key];
+    console.log('Storage key "%s" in namespace "%s" changed. ' +
+      'Old value was "%s", new value is "%s".',
+      key,
+      namespace,
+      storageChange.oldValue,
+      storageChange.newValue);
+  }
+});
